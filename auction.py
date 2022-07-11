@@ -26,7 +26,7 @@ class Auction:
     def execute_round(self):
         """Each round is executed by choosing a user, creating bidder instances,
         receiving the bids from the bidders and selecting a winner. The winner
-        pays the secon-highest bid, and receives $1 if the user clicks on the ad.
+        pays the second-highest bid, and receives $1 if the user clicks on the ad.
         Only the winner is notified if the user clicks.
         """
         if len(self.bidders) > 1:
