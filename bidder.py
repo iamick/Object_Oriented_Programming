@@ -31,11 +31,12 @@ class Bidder:
         self.num_rounds -= 1
         if self.user_id not in list(self.users_clicked):
             return np.random.random()
-        if 0 < self.users_clicked[self.user_id] < 3:
+        elif 0 < self.users_clicked[self.user_id] < 3:
             return round(np.random.randint(1, 2) + np.random.random(), 2)
-        if 3 <= self.users_clicked[self.user_id] < 10:
+        elif 3 <= self.users_clicked[self.user_id] < 10:
             return round(np.random.randint(2, 10) + np.random.random(), 2)
-        return round(np.random.randint(10, 100) + np.random.random(), 2)
+        else:
+            return round(np.random.randint(10, 100) + np.random.random(), 2)
 
     def notify(self, auction_winner, price, clicked=None):
         """Used to send information about what happened in a round back to the
